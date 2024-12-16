@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        /* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background:url(angkor-wat-temple-siem-reap-1-scaled.jpg);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: rgb(169, 211, 243);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+    </style>
+</head>
+<link rel="icon" type="image/x-icon" href="icon.jpg">
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">password</label>
+                <input type="password" id="password" name="password" placeholder="password" required>
+            </div>
+            <button type="submit" id="login-btn">Login</button>
+            <p id="error-message"></p>
+        </form>
+    </div>
+
+    <script>
+        // script.js
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    // Get the values from the input fields
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    // Check if the username and password are correct
+    if (username === 'kin' && password === '123') {
+        alert('សូមស្វាគមន៍! អ្នកបានចូលដោយជោគជ័យ');
+        window.location.href = '/Users/mac/Documents/ITE206k web javascript/project book manegement/index1.html'; // Redirect to another page (can be dashboard)
+    } else {
+        document.getElementById('error-message').textContent = 'ឈ្មោះអ្នកប្រើប្រាស់ ឬ ពាក្យសម្ងាត់មិនត្រឹមត្រូវ!';
+    }
+});
+
+    </script>
+</body>
+</html>
